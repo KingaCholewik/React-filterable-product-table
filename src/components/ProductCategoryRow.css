@@ -1,0 +1,7 @@
+.category h3 {
+  float: left;
+  color: brown;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
