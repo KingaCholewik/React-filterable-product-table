@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './AddProduct.css';
 
 export default function AddProduct({
@@ -11,7 +10,6 @@ export default function AddProduct({
   addStock,
   setAddStock,
 }) {
-  console.log(addStock);
   return (
     <div className="addProduct">
       <h3>Add New Product</h3>
@@ -53,6 +51,7 @@ export default function AddProduct({
             id="addStocked"
             value={''}
             onChange={() => setAddStock(!addStock)}
+            checked={addStock}
           />{' '}
           In stock
         </label>

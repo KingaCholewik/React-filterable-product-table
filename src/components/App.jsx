@@ -43,6 +43,7 @@ function App() {
   });
   const createNewProduct = () => {
     const newProdukt = {
+      key: addName,
       category: addCategory,
       price: `$${addPrice}`,
       stocked: addStock,
@@ -52,8 +53,12 @@ function App() {
     setAddCategory('');
     setAddName('');
     setAddPrice('');
+    setAddStock(false);
   };
-  console.log(data);
+  const deleteRow = (e) => {
+    console.log('działa', e.target.parentNode);
+    e.target.parentNode.remove();
+  };
   return (
     <>
       <div className="App">
@@ -64,18 +69,21 @@ function App() {
         />
         <ProductTable />
         {products.map((product) => (
-          // eslint-disable-next-line react/jsx-key
-          <div>
-            <ProductCategoryRow category={product.category} />
+          <>
+            <ProductCategoryRow
+              key={product.category}
+              category={product.category}
+            />
             {product.products.map((item) => (
               <ProductRow
                 key={item.name}
                 name={item.name}
                 price={item.price}
                 stocked={item.stocked}
+                onButtonClick={deleteRow}
               />
             ))}
-          </div>
+          </>
         ))}
       </div>
       <div className="addNewProduct">

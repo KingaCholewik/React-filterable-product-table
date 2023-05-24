@@ -1,12 +1,17 @@
 import './ProductRow.css';
 
-export default function ProductRow({ name, price, stocked }) {
+export default function ProductRow({ name, price, stocked, onButtonClick }) {
+  const handleClick = (e) => {
+    onButtonClick(e);
+  };
   return (
-    <>
-      <tr>
-        <td style={{ color: stocked ? 'black' : 'red' }}>{name}</td>
-        <td className="price">{price}</td>
-      </tr>
-    </>
+    <div className="productRow">
+      <span style={{ color: stocked ? 'black' : 'red' }}>{name}</span>
+      <span className="price">{price}</span>
+
+      <button className="deleteButton" onClick={handleClick}>
+        Delete
+      </button>
+    </div>
   );
 }

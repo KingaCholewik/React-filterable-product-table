@@ -1,4 +1,25 @@
-td {
-  width: 300px;
+.productRow {
+  margin: 5px 0;
+}
+span {
+  display: block;
+  width: 200px;
   padding: 10px 5px;
+  float: left;
+}
+.deleteButton {
+  box-sizing: border-box;
+  width: 60px;
+  padding: 10px 0;
+  border: 1px solid brown;
+
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: white;
+  color: brown;
+  transition: all 0.3s ease-in-out;
+}
+.deleteButton:hover {
+  transform: scale(120%);
 }
