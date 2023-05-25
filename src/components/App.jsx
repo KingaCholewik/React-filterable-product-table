@@ -69,7 +69,7 @@ function App() {
         />
         <ProductTable />
         {products.map((product) => (
-          <>
+          <div key={product.category}>
             <ProductCategoryRow
               key={product.category}
               category={product.category}
@@ -83,7 +83,7 @@ function App() {
                 onButtonClick={deleteRow}
               />
             ))}
-          </>
+          </div>
         ))}
       </div>
       <div className="addNewProduct">
